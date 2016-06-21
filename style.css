@@ -5,7 +5,6 @@ padding: 0;
 body{
   background-image: url("images/American-Football-Field-Wallpaper-High-Resolution-28240.jpg");
 }
-
 .one{
   background-color:black;
   width: 100vw;
@@ -17,7 +16,24 @@ body{
   z-index: 0;
   margin-top:-50px;
 }
-
+.home{
+  background-image: url("images/download.png");
+  background-size: 100% 100%;
+  height: 150px;
+  width: 300px;
+  margin-bottom:35px;
+}
+.vrs{
+  font-size:30px;
+  color:black;
+}
+.away{
+    background-image: url("images/download(1).png");
+    background-size: 100% 100%;
+    height: 150px;
+    width: 300px;
+    margin-bottom: 30px;
+}
 .text{
   font-size:40px;
   position: relative;
@@ -36,8 +52,8 @@ body{
   display: inline-block;
   height: 75vh;
   width:25vw;
-  background-color:red;
 }
+
 .vrs{
   display: inline-block;
 }
@@ -45,7 +61,24 @@ body{
   display: inline-block;
   height: 75vh;
   width:25vw;
-  background-color:blue;
+}
+button{
+  background-color: #353526;
+  color: white;
+  font-size: 20px;
+  font-weight: lighter;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 30px;
+}
+.teamName{
+  font-size:45px;
+  color:black;
+  margin-bottom: 35px;
+}
+.logo{
+
+
 }
 .options {
   display: inline-block;

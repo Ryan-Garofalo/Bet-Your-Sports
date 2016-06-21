@@ -1,8 +1,13 @@
 var years=[2008,2009,2010,2011,2012,2014,2015]
 var weeks=[1,2,3,4,5,6,7.8,9,10,11,12,13,14,15,16,17]
-
 var year = years[Math.floor(Math.random()*years.length)];
 var week = weeks[Math.floor(Math.random()*weeks.length)];
+
+var awayTeam;
+var awayScore;
+var homeTeam ;
+var homeScore;
+
 
 $.ajax({
     url: "https://cors-anywhere.herokuapp.com/https://api.fantasydata.net/nfl/v2/JSON/ScoresByWeek/"+year+"/"+week,
@@ -14,7 +19,7 @@ $.ajax({
     method: "GET"
 })
 .done(function(data) {
-  getMatchup(pickGame(data));
+  getMatchup(pickGame(data))
 })
 .fail(function(error,error2,error3) {
 
@@ -26,10 +31,21 @@ function pickGame(data){
    }
 
 function getMatchup(game){
-  console.log(game.AwayTeam);
-  console.log(game.AwayScore);
+ awayTeam = game.AwayTeam;
+ awayScore = game.AwayScore;
 
-  console.log(game.HomeTeam);
-  console.log(game.HomeScore);
-  console.log(game);
+ homeTeam = game.HomeTeam;
+ homeScore=game.HomeScore;
+
+ appendMatchup();
+
+
+}
+
+function appendMatchup(){
+  var pageHomeTeam=$('.hName')
+  pageHomeTeam.html(homeTeam)
+
+  var pageAwayTeam=$('.aName')
+  pageAwayTeam.html(awayTeam)
 }
