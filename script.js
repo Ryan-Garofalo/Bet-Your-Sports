@@ -2,11 +2,14 @@ var years=[2008,2009,2010,2011,2012,2014,2015]
 var weeks=[1,2,3,4,5,6,7.8,9,10,11,12,13,14,15,16,17]
 var year = years[Math.floor(Math.random()*years.length)];
 var week = weeks[Math.floor(Math.random()*weeks.length)];
+var homeButton = $('.homeButton')
+var awayButton = $('.awayButton')
 
 var awayTeam;
 var awayScore;
 var homeTeam ;
 var homeScore;
+var game;
 
 
 $.ajax({
@@ -18,17 +21,23 @@ $.ajax({
     },
     method: "GET"
 })
-.done(function(data) {
-  getMatchup(pickGame(data))
-})
-.fail(function(error,error2,error3) {
 
+.done(function(data) {
+  pickGame(data);
+  getMatchup(game);
+  appendMatchup();
+  getWinner()
+
+})
+
+.fail(function() {
     alert("error");
 });
 
 function pickGame(data){
-  return data[Math.floor(Math.random()*data.length)];
-   }
+  game = data[Math.floor(Math.random()*data.length)];
+    console.log(game);
+}
 
 function getMatchup(game){
  awayTeam = game.AwayTeam;
@@ -36,10 +45,6 @@ function getMatchup(game){
 
  homeTeam = game.HomeTeam;
  homeScore=game.HomeScore;
-
- appendMatchup();
-
-
 }
 
 function appendMatchup(){
@@ -49,3 +54,28 @@ function appendMatchup(){
   var pageAwayTeam=$('.aName')
   pageAwayTeam.html(awayTeam)
 }
+
+function getWinner(){
+  console.log(homeTeam);
+  console.log(homeScore);
+
+  console.log(awayTeam);
+  console.log(awayScore);
+
+}
+
+homeButton.click(function(){
+  if(awayScore<homeScore){
+    alert("You're a baller you won!")
+  }else{
+    alert ("You're an idiot try again")
+  }
+});
+
+awayButton.click(function(){
+  if(awayScore<homeScore){
+    alert("You're an idiot try again")
+  }else{
+    alert ("You're a baller you won!")
+  }
+});

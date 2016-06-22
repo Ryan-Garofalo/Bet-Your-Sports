@@ -10,8 +10,40 @@ var teamLogo = {
   ARI:"Fiat",
   ATL:"500",
   BAL:"white"
+  BUF:
+  CAR:
+  CHI:
+  CIN:
+  CLE:
+  DAL:
+  DEN:"images/broncos.png"
+  DET:
+  GB:
+  HOU:
+  IND:
+  JAX:
+  KC:
+  LA:
+  MIA:
+  MIN:
+  NE:
+  NO:
+  NYG:
+  NYJ:
+  OAK:
+  PHI:
+  PIT:
+  SD:
+  SEA:"images/seahawks.png"
+  SF:
+  TB:
+  TEN:
+  WAS:
 };
 
-console.log(teamLogo.ARI);
 
- console.log(typeof 5)
+for (var key in teamLogo) {
+  if (key=== "ATL"){
+    console.log("hi");
+  }
+  }
