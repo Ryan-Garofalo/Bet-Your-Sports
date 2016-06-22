@@ -13,7 +13,7 @@ var teamLogo = {
   BUF:
   CAR:
   CHI:
-  CIN:
+  CIN: 
   CLE:
   DAL:
   DEN:"images/broncos.png"

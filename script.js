@@ -36,7 +36,6 @@ $.ajax({
 
 function pickGame(data){
   game = data[Math.floor(Math.random()*data.length)];
-    console.log(game);
 }
 
 function getMatchup(game){
@@ -53,6 +52,18 @@ function appendMatchup(){
 
   var pageAwayTeam=$('.aName')
   pageAwayTeam.html(awayTeam)
+
+  for (var key in teamLogo) {
+      if(homeTeam===key){
+        $('.home').css("background-image",`url(${teamLogo[key]})`);
+      }
+  }
+  for (var key in teamLogo) {
+      if(awayTeam===key){
+        console.log();
+        $('.away').css("background-image",`url(${teamLogo[key]})`);
+      }
+  }
 }
 
 function getWinner(){
