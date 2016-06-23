@@ -26,7 +26,8 @@ $.ajax({
   pickGame(data);
   getMatchup(game);
   appendMatchup();
-  getWinner()
+  appendGameInfo();
+  appendOutcome()
 
 })
 
@@ -66,14 +67,26 @@ function appendMatchup(){
   }
 }
 
-function getWinner(){
-  console.log(homeTeam);
-  console.log(homeScore);
+function appendGameInfo(){
+$('.year').html(game.Season)
+$('.week').html(game.Week)
+$('.spread').html(game.PointSpread)
+$('.over').html(game.OverUnder)
+$('.hMoney').html(game.HomeTeamMoneyLine)
+$('.aMoney').html(game.AwayTeamMoneyLine)
+}
 
-  console.log(awayTeam);
-  console.log(awayScore);
+function appendOutcome(){
+  console.log(game);
+
+
 
 }
+
+
+
+
+
 
 homeButton.click(function(){
   if(awayScore<homeScore){

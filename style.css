@@ -83,6 +83,7 @@ button{
 }
 .options {
   display: inline-block;
+  float:left;
   height: 35vh;
   width:20vw;
   background-color:black;
@@ -90,6 +91,18 @@ button{
   color: white;
 
 }
+
+.outcome{
+  display: inline-block;
+  height: 20vh;
+  width:40vw;
+  background-color:black;
+  margin-left: 5px;
+  color: white;
+  margin-left: 110px;
+  margin-top:120px;
+}
+
 .scoreboard{
   display: inline-block;
   float: right;
@@ -100,6 +113,48 @@ button{
   color: white;
 
 }
+
+.year{
+  display: inline-block;
+}
+.week{
+  display: inline-block;
+}
+.spread{
+  display: inline-block;
+}
+.over{
+  display: inline-block;
+}
+.hMoney{
+  display: inline-block;
+}
+.aMoney{
+  display: inline-block;
+}
+.final{
+  display:flex;
+  justify-content: center;
+}
+.homeTeamSide{
+  display: inline-block;
+}
+
+.awayTeamSide{
+  display: inline-block;
+  float: right;
+}
+
+.hScore{
+  display: flex;
+  justify-content: center;
+}
+.aScore{
+  display: flex;
+  justify-content: center;
+}
+
+
 .footer{
   background-color:black;
   width: 100vw;
