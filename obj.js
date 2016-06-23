@@ -20,7 +20,7 @@ var teamLogo = {
   MIN:"images/MIN.gif",
   NE:"images/NE.png",
   NO:"images/NO.png",
-  NYG:"images/NYG.jpg",
+  NYG:"images/NYG.png",
   NYJ:"images/NYJ.png",
   OAK:"images/OAK.png",
   PHI:"images/PHI.png",

@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+    <script src="https://use.fontawesome.com/859ee3551d.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
     <script type="text/javascript" src="obj.js"></script>
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
@@ -10,17 +14,23 @@
   </head>
   <body class="background">
    <div class="container">
-     <div class="text">Bet your Sports</div>
      <div class="one"></div>
+     <div class="league">
+       <div class="text">Bet your Sports</div>
+       <div class="leagueb nfl"></div>
+       <div class="leagueb nba"></div>
+       <div class="leagueb mls"></div>
+       <div class="leagueb nhl"></div>
+    </div>
   </div>
   <div class="middle">
-      <div class="left">
-        <div class="leftWrapper">
+    <div class="left">
+      <div class="leftWrapper">
         <div class="hName teamName"></div>
         <div class="home"></div>
         <button class="homeButton">Home Team</button>
       </div>
-      </div>
+    </div>
       <div class="vrs">Vrs</div>
     <div class="right">
       <div class="aName teamName"></div>
@@ -29,40 +39,38 @@
     </div>
   </div>
   <div class="options">
-    <div>Year: <p class="year"></p></div>
-    <div>Week: <p class="week"></p> </div>
-    <div>Point Spread: <p class="spread"></p></div>
-    <div>Over/Under: <p class="over"></p></div>
-    <div>Home Team Money line: <p class="hMoney"></p></div>
-    <div>Away Team Money Line: <p class="aMoney"></p></div>
+    <div class="space">Year: <p class="year"></p></div>
+    <div class="space">Week: <p class="week"></p> </div>
+    <div class="space">Point Spread: <p class="spread"></p></div>
+    <div class="space">Over/Under: <p class="over"></p></div>
+    <div class="space">Home Team Money line: <p class="hMoney"></p></div>
+    <div class="space">Away Team Money Line: <p class="aMoney"></p></div>
   </div>
   <div class="outcome">
     <div class="final">Final Score</div>
+
     <div class="homeTeamSide">
       <div class="homeScore">Home Team</div>
-      <div class="hScore">35</div>
+      <div class="hScore"></div>
     </div>
     <div class="awayTeamSide">
       <div class="awayScore">Away Team</div>
-      <div class="aScore">20</div>
+      <div class="aScore"></div>
+
     </div>
-
-
-
+    <div class="winOrLose"></div>
+    <div class="nextMatch">Next Matchup</div>
 
   </div>
   <div class="scoreboard">
-    <div>Scoreboard:</div>
-    <div>money:</div>
-    <div>Wager:</div>
-    <div>total:</div>
-    <div>highscore:</div>
-    <div>Win Streak:</div>
+    <div class="space">Scoreboard:</div>
+    <div class="space">money:</div>
+    <div class="space">Wager:</div>
+    <div class="space">total:</div>
+    <div class="space">highscore:</div>
+    <div class="space">Win Streak:</div>
   </div>
-
-    <footer class="footer"><p>Bet your Sports</p></footer>
-
-
-    <script type="text/javascript" src="script.js"></script>
+  <footer class="footer"><p>Bet your Sports</p></footer>
+  <script type="text/javascript" src="script.js"></script>
   </body>
 </html>
