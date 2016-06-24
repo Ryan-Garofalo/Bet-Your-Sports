@@ -1,21 +1,60 @@
 
 var homeButton = $('.homeButton')
 var awayButton = $('.awayButton')
-
 var awayTeam;
 var awayScore;
 var homeTeam ;
 var homeScore;
 var game;
 
-newMatchup()
 
+var money=2000;
+var highScoreVal=money;
+var winStreakVal=0
+var pickRightButton=0
+
+$('.money').html("$"+money);
+$('.highScore').html('$'+money)
+$('.winStreak').html(0)
+
+
+// newMatchup()
+
+function winStreakUp(){
+  winStreakVal+=1
+  $('.winStreak').html(winStreakVal);
+}
+function winStreakDown(){
+  $('.winStreak').html(0);
+}
+
+
+function deny(){
+
+}
+
+function highScore(){
+  if(money>highScoreVal){
+      highScoreVal=money;
+      $('.highScore').html('$'+money)
+  }
+}
 
 $('.nextMatch').click(function(){
-  $('.hScore').html("")
-  $('.aScore').html("")
-  $('.winOrLose').html("")
-  newMatchup()
+  if (pickRightButton===1){
+  // newMatchup()
+  money=$('.total').html();
+  $('.money').html("$"+money)
+  $('.total').html("");
+  $('.wager').val("");
+  $('.hScore').html("");
+  $('.aScore').html("");
+  $('.winOrLose').html("");
+  highScore()
+  pickRightButton=0
+}else{
+  alert("Please select a team")
+}
 })
 
 function newMatchup(){
@@ -69,14 +108,12 @@ function appendMatchup(){
   }
   for (var key in teamLogo) {
       if(awayTeam===key){
-        console.log();
         $('.away').css("background-image",`url(${teamLogo[key]})`);
       }
   }
 }
 
 function appendGameInfo(){
-  console.log(game);
 $('.year').html(game.Season)
 $('.week').html(game.Week)
 $('.spread').html(game.PointSpread)
@@ -86,25 +123,55 @@ $('.aMoney').html(game.AwayTeamMoneyLine)
 }
 
 function appendOutcome(){
-  console.log(game);
   $('.aScore').html(game.AwayScore)
   $('.hScore').html(game.HomeScore)
 }
 
 homeButton.click(function(){
-  appendOutcome()
-  if(awayScore<homeScore){
-    $('.winOrLose').html("You're a Baller You WON!!!!")
-  }else{
-    $('.winOrLose').html("You Stink Try Again!!!!")
-  }
+  if (Number($('.wager').val())>Number(money)){
+    alert("Nice Try Wise guy")
+}else{
+  if(pickRightButton===0){
+  var wage= $('.wager').val();
+  $('.total').html(Number(money)+Number(wage));
+  winStreakUp()
+  pickRightButton=1
+}else{
+  alert("please generate new match")
+}
+}
 });
 
+
+  // appendOutcome()
+  // if(awayScore<homeScore){
+  //   $('.winOrLose').html("You're a Baller You WON!!!!")
+  // }else{
+  //   $('.winOrLose').html("You Stink Try Again!!!!")
+  // }
+
+
 awayButton.click(function(){
-  appendOutcome()
-  if(awayScore<homeScore){
-    $('.winOrLose').html("You're a Baller You WON!!!!")
-  }else{
-    $('.winOrLose').html("You Stink Try Again!!!!")
-  }
+  if (Number($('.wager').val())>Number(money)){
+    alert("Nice Try Wise guy")
+}else{
+  if(pickRightButton===0){
+  var wage= $('.wager').val();
+  $('.total').html(money-wage);
+  winStreakDown()
+  pickRightButton=1
+}else{
+  alert("please generate new match")
+}
+}
 });
+  // appendOutcome()
+  // if(awayScore<homeScore){
+  //   $('.winOrLose').html("You Stink Try Again!!!!")
+  // }else{
+  //   $('.winOrLose').html("You're a Baller You WON!!!!")
+  // }
+
+function winner(){
+
+}

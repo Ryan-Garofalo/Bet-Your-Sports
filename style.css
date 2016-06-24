@@ -246,6 +246,30 @@ button{
   background-color: black;
   font-size: 35px;
 }
+.money{
+  display: inline-block;
+}
+.highScore{
+  display: inline-block;
+}
+.wagerValue{
+    display: inline-block;
+}
+.winStreak{
+  display: inline-block;
+}
+.total{
+    display: inline-block;
+}
+select{
+    font-family: 'Orbitron', sans-serif;
+    background-color: black;
+    color: white;
+}
+
+.space1{
+margin-top: 90px
+}
 
 .footer{
   font-family: 'Bangers', cursive;
