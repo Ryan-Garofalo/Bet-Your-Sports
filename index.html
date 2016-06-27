@@ -9,6 +9,7 @@
     <link href='https://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
     <script type="text/javascript" src="obj.js"></script>
+    <script type="text/javascript" src="obj.js"></script>
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
     </style>
   </head>
@@ -39,17 +40,17 @@
     </div>
   </div>
   <div class="options">
-    <div class="space">Year: <p class="year"></p></div>
-    <div class="space">Week: <p class="week"></p> </div>
-    <div class="space">Point Spread: <p class="spread"></p></div>
-    <div class="space">Over/Under: <p class="over"></p></div>
-    <div class="space">Home Team Money line: <p class="hMoney"></p></div>
-    <div class="space">Away Team Money Line: <p class="aMoney"></p></div>
+    <div class="space">Year: <p class="year inline"></p></div>
+    <div class="space">Week: <p class="week inline"></p> </div>
+    <div class="space">Point Spread: <p class="spread inline"></p></div>
+    <div class="space">Over/Under: <p class="over inline"></p></div>
+    <div class="space">Home Team Money line: <p class="hMoney inline"></p></div>
+    <div class="space">Away Team Money Line: <p class="aMoney inline"></p></div>
   </div>
   <div class="outcome">
     <div class="final">Final Score</div>
 
-    <div class="homeTeamSide">
+    <div class="homeTeamSide inline">
       <div class="homeScore">Home Team</div>
       <div class="hScore"></div>
     </div>
@@ -63,7 +64,7 @@
 
   </div>
   <div class="scoreboard">
-    <div class="space">money: <p class="money"></p></div>
+    <div class="space">money: <p class="money inline"></p></div>
     <div class="space">Wager: <input type="text" class="wager"></p></div>
     <div class="space">Over/Under:
       <select class="wager">
@@ -71,7 +72,7 @@
         <option>Over</option>
         <option>Under</option>
       </select>
-      <select class="wagerValue">
+      <select class="wagerValue inline">
         <option></option>
         <option>$25</option>
         <option>$50</option>
@@ -79,9 +80,10 @@
         <option>$75</option>
       </select>
     </div>
-    <div class="space">total:<p class="total"></p></div>
-    <div class="space1">Highscore: <p class="highScore"></p></div>
-    <div class="space">Win Streak: <p class="winStreak"></p></div>
+    <div class="space">total:<p class="total inline"></p></div>
+      <div class="space1">Win Streak: <p class="winStreak inline"></p></div>
+    <div class="space2">Highscore: <p class="highScore inline"></p></div>
+
   </div>
   <footer class="footer"><p>Bet your Sports</p></footer>
   <script type="text/javascript" src="script.js"></script>

@@ -60,10 +60,10 @@ body{
 }
 
 .away{
-    background-size: 100% 100%;
-    height: 150px;
-    width: 300px;
-    margin-bottom: 30px;
+  background-size: 100% 100%;
+  height: 150px;
+  width: 300px;
+  margin-bottom: 30px;
 }
 
 .middle{
@@ -150,31 +150,9 @@ button{
   border-radius: 5px;
 }
 
-.year{
-  display: inline-block;
-}
-.week{
-  display: inline-block;
-}
-.spread{
-  display: inline-block;
-}
-.over{
-  display: inline-block;
-}
-.hMoney{
-  display: inline-block;
-}
-.aMoney{
-  display: inline-block;
-}
 .final{
   display:flex;
   justify-content: center;
-}
-.homeTeamSide{
-  display: inline-block;
-
 }
 
 .awayTeamSide{
@@ -186,15 +164,24 @@ button{
   display: flex;
   justify-content: center;
   margin-top: 5px;
-
 }
+
 .aScore{
   display: flex;
   justify-content: center;
   margin-top: 5px;
 }
+
 .space{
   margin: 7px;
+}
+.space1{
+  margin-top: 100px
+}
+
+.space2{
+  margin-top: 7px;
+  font-size: 22px;
 }
 
 .nextMatch{
@@ -219,15 +206,12 @@ button{
   background-size: 100% 100%;
   height: 50px;
   width: 50px;
-
 }
 .mls{
   background-image:url('images/mls.png');
   background-size: 100% 100%;
   height: 50px;
   width: 50px;
-
-
 }
 .nhl{
   background-image:url('images/nhl.png');
@@ -246,29 +230,15 @@ button{
   background-color: black;
   font-size: 35px;
 }
-.money{
+
+.inline{
   display: inline-block;
-}
-.highScore{
-  display: inline-block;
-}
-.wagerValue{
-    display: inline-block;
-}
-.winStreak{
-  display: inline-block;
-}
-.total{
-    display: inline-block;
-}
-select{
-    font-family: 'Orbitron', sans-serif;
-    background-color: black;
-    color: white;
 }
 
-.space1{
-margin-top: 90px
+select{
+  font-family: 'Orbitron', sans-serif;
+  background-color: black;
+  color: white;
 }
 
 .footer{
@@ -279,7 +249,7 @@ margin-top: 90px
   bottom:0;
   color:red;
   font-size:20px;
-    opacity: .75;
+  opacity: .75;
   text-align: center;
   position: absolute;
 }

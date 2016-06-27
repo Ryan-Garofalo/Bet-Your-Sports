@@ -7,7 +7,6 @@ var homeTeam ;
 var homeScore;
 var game;
 
-
 var money=2000;
 var highScoreVal=money;
 var winStreakVal=0
@@ -17,8 +16,8 @@ $('.money').html("$"+money);
 $('.highScore').html('$'+money)
 $('.winStreak').html(0)
 
+newMatchup()
 
-// newMatchup()
 
 function winStreakUp(){
   winStreakVal+=1
@@ -28,33 +27,31 @@ function winStreakDown(){
   $('.winStreak').html(0);
 }
 
-
-function deny(){
-
-}
-
 function highScore(){
-  if(money>highScoreVal){
-      highScoreVal=money;
-      $('.highScore').html('$'+money)
+
+
+  var totalAmount=Number($('.total').html())
+console.log(totalAmount);
+  if(totalAmount>Number(highScoreVal)){
+      highScoreVal=totalAmount;
+      $('.highScore').html('$'+highScoreVal)
   }
 }
 
 $('.nextMatch').click(function(){
   if (pickRightButton===1){
-  // newMatchup()
-  money=$('.total').html();
-  $('.money').html("$"+money)
-  $('.total').html("");
-  $('.wager').val("");
-  $('.hScore').html("");
-  $('.aScore').html("");
-  $('.winOrLose').html("");
-  highScore()
-  pickRightButton=0
-}else{
-  alert("Please select a team")
-}
+    newMatchup()
+    money=$('.total').html();
+    $('.money').html("$"+money)
+    $('.total').html("");
+    $('.wager').val("");
+    $('.hScore').html("");
+    $('.aScore').html("");
+    $('.winOrLose').html("");
+    pickRightButton=0
+  }else{
+    alert("Please select a team")
+  }
 })
 
 function newMatchup(){
@@ -114,12 +111,12 @@ function appendMatchup(){
 }
 
 function appendGameInfo(){
-$('.year').html(game.Season)
-$('.week').html(game.Week)
-$('.spread').html(game.PointSpread)
-$('.over').html(game.OverUnder)
-$('.hMoney').html(game.HomeTeamMoneyLine)
-$('.aMoney').html(game.AwayTeamMoneyLine)
+  $('.year').html(game.Season)
+  $('.week').html(game.Week)
+  $('.spread').html(game.PointSpread)
+  $('.over').html(game.OverUnder)
+  $('.hMoney').html(game.HomeTeamMoneyLine)
+  $('.aMoney').html(game.AwayTeamMoneyLine)
 }
 
 function appendOutcome(){
@@ -128,50 +125,77 @@ function appendOutcome(){
 }
 
 homeButton.click(function(){
-  if (Number($('.wager').val())>Number(money)){
-    alert("Nice Try Wise guy")
-}else{
-  if(pickRightButton===0){
-  var wage= $('.wager').val();
-  $('.total').html(Number(money)+Number(wage));
-  winStreakUp()
-  pickRightButton=1
-}else{
-  alert("please generate new match")
-}
-}
-});
+  appendOutcome()
 
+  // winner()
+  // gameOver()
 
-  // appendOutcome()
-  // if(awayScore<homeScore){
-  //   $('.winOrLose').html("You're a Baller You WON!!!!")
-  // }else{
-  //   $('.winOrLose').html("You Stink Try Again!!!!")
-  // }
+  highScore()
+  if(awayScore<homeScore){
+    winner()
+    $('.winOrLose').html("You're a Baller You WON!!!!")
+  }else{
+   loser()
 
+    $('.winOrLose').html("You Stink Try Again!!!!")
+    gameOver()
+  }
+})
 
 awayButton.click(function(){
+  appendOutcome()
+
+  // loser()
+  // gameOver()
+
+  highScore()
+  if(awayScore<homeScore){
+     loser()
+
+    $('.winOrLose').html("You Stink Try Again!!!!")
+    gameOver()
+  }else{
+    winner()
+    $('.winOrLose').html("You're a Baller You WON!!!!")
+  }
+})
+
+function winner(){
   if (Number($('.wager').val())>Number(money)){
     alert("Nice Try Wise guy")
 }else{
   if(pickRightButton===0){
-  var wage= $('.wager').val();
-  $('.total').html(money-wage);
-  winStreakDown()
-  pickRightButton=1
-}else{
-  alert("please generate new match")
-}
-}
-});
-  // appendOutcome()
-  // if(awayScore<homeScore){
-  //   $('.winOrLose').html("You Stink Try Again!!!!")
-  // }else{
-  //   $('.winOrLose').html("You're a Baller You WON!!!!")
-  // }
+    var wage= $('.wager').val();
+    $('.total').html(Number(money)+Number(wage));
+    highScore()
+    winStreakUp()
+    pickRightButton=1
+  }else{
+    alert("please generate new match")
+  }
+  }
+};
 
-function winner(){
+function loser(){
+  if (Number($('.wager').val())>Number(money)){
+    alert("Nice Try Wise guy")
+  }else{
+    if(pickRightButton===0){
+    var wage= $('.wager').val();
+    $('.total').html(money-wage);
+    gameOver()
+    winStreakDown()
+    pickRightButton=1
+  }else{
+    alert("please generate new match")
+  }
+  }
+};
 
+function gameOver(){
+  console.log(Number($('.total').html()));
+  console.log(Number($('.total').html())===0);
+  if (Number($('.total').html())===0) {
+     $('.winOrLose').html("Game OVER!! You broke!!")
+  }
 }
